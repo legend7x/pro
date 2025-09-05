@@ -1,0 +1,127 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(home: Yemen());
+  }
+}
+
+class Yemen extends StatelessWidget {
+  const Yemen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.grey[300],
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        leading: Container(
+          margin: EdgeInsets.all(10),
+          decoration: BoxDecoration(
+
+            color: Colors.white.withValues(alpha: 0.3),
+            borderRadius: BorderRadius.all(Radius.circular(12)),
+          ),
+          child: Icon(Icons.arrow_back_ios, color: Colors.white),
+        ),
+        title: Text(
+          "باقات الانترنت",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 30,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
+        centerTitle: true,
+      ),
+      body: ListView.separated(
+        separatorBuilder: (context,index)=>Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Divider(color: Colors.grey,),
+        ),
+        itemBuilder: (context,index)=>Container(
+          margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+          padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            textDirection: TextDirection.rtl,
+            children: [
+              Text(
+                "عنوان الباقة",
+                style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 30),
+              Row(
+                textDirection: TextDirection.rtl,
+                children: [
+                  Icon(Icons.network_check_rounded, color: Colors.grey),
+                  Text(
+                    "جيجا 1.5",
+                    style: TextStyle(fontSize: 25, color: Colors.grey),
+                  ),
+                  Spacer(),
+                  Icon(Icons.access_time_outlined, color: Colors.grey),
+                  Text(
+                    "ايام صلاحية7 ",
+                    style: TextStyle(fontSize: 25, color: Colors.grey),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Row(
+                textDirection: TextDirection.rtl,
+                children: [
+                  Icon(Icons.network_check_rounded, color: Colors.grey),
+                  Text(
+                    "جيجا صباحي 1.5",
+                    style: TextStyle(fontSize: 25, color: Colors.grey),
+                  ),
+                ],
+              ),
+              Row(
+                textDirection: TextDirection.rtl,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(
+                    width: 200,
+                    clipBehavior: Clip.antiAliasWithSaveLayer,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                    ),
+                    child: MaterialButton(
+                      color: Colors.red,
+                      onPressed: () {},
+                      child: Text(
+                        "اشتراك",
+                        style: TextStyle(fontSize: 20, color: Colors.white),
+                      ),
+                    ),
+                  ),
+                  Text(
+                    " السعر 1000 ريال",
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.red,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),itemCount: 10,),
+    );
+  }
+}
