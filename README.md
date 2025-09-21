@@ -26,5 +26,6 @@ flutter run
 
 ## 👨‍💻 المطور
 - الاسم:مروان العريقي 
-- GitHub:@legend7x 
+- GitHub:@legend7x
+- NickName:legend
 - البريد: legend772196@gmail.com
